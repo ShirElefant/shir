@@ -1,0 +1,45 @@
+header{
+color: #e570e7; 
+color: -moz-linear-gradient(top,  #e570e7 48%, #c85ec7 82%, #a849a3 100%); 
+color: -webkit-linear-gradient(top,  #e570e7 48%,#c85ec7 82%,#a849a3 100%); 
+color: linear-gradient(to bottom,  #e570e7 48%,#c85ec7 82%,#a849a3 100%);
+height:30%;
+position:absolute;
+right:260;
+top:0;
+font-size:70;
+font-family:arial;
+}
+body{
+
+background: #fefcea; 
+background: -moz-linear-gradient(top,  #fefcea 0%, #f1da36 87%); 
+background: -webkit-linear-gradient(top,  #fefcea 0%,#f1da36 87%); 
+background: linear-gradient(to bottom,  #fefcea 0%,#f1da36 87%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=0 ); 
+
+}
+nav{
+color:purple;
+position:absolute;
+right:580;
+top:320;
+font-size:30;
+font-family:arial;
+}
+section{
+color:purple;
+position:absolute;
+right:480;
+top:375;
+font-size:30;
+font-family:arial;
+}
+article{
+	color:purple;
+	position:absolute;
+right:410;
+top:450;
+font-size:20;
+font-family:arial;	
+}
