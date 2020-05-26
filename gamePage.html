@@ -1,19 +1,32 @@
 <html>
 	<head>
-		<title> head vs head </title>
+		<title>  the English game </title>
 		<link href="cssGamePage.css" rel="stylesheet" type="text/css" />
 	</head>
 
 
 	<body>
 		<header>
-			<h1> tell your enswer here:</h1>
+			<h1> tell your enswer here</h1>
 			
 		</header>
 		<form id="form1" action="calculate-next" method="get">
         <input id="nmb1" type="text" name="answer" value="1"/><br/>
-        <input type="submit"/> 
+        <input id = "some-button" type="submit"/> 
 		</form>
+		<script>
+        document.getElementById("some-button").style.display = "none";
+
+        function showStuff() {
+            document.getElementById("some-button").style.display = "inline";
+        }
+
+        function myFunction() {
+            window.location = "project.html"
+        }
+
+        setTimeout(showStuff, 5000);
+    </script>
 	</body>
 	
 
