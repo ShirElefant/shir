@@ -68,7 +68,7 @@ class the_english_game:
         if (ansy not in self.answers):
             data = "<br><h1>Your answer "+ansy+" is correct</h1></br>"
             self.stri=self.stri+", "+ansy
-            data= data+ "<h2> the answers that alredy have answered: "+self.stri+"</h2>"
+            data= data+ "<h2> The answers that have already been answered are: "+self.stri+"</h2>"
             with open(self.WWWROOT + "gamePage.html", mode='rb') as file:
                 fileContent = file.read()
                 fileContent=fileContent.decode()
@@ -77,8 +77,8 @@ class the_english_game:
                 msg = msg + "\r\n" + fileContent+data
 
         else:
-            data = "<br><h1>Your answer "+ansy+" is correct but alredy said</h1></br>"
-            data= data+ "<h2> the answers that alredy have answered: "+self.stri+"</h2>"
+            data = "<br><h1>Your answer "+ansy+" is correct but has already been answered</h1></br>"
+            data= data+ "<h2> The answers that have already been answered are:  "+self.stri+"</h2>"
             with open(self.WWWROOT + "gamePage.html", mode='rb') as file:
                 fileContent = file.read()
                 fileContent=fileContent.decode()
@@ -94,9 +94,9 @@ class the_english_game:
         if (self.numArror<2):
             self.numArror=self.numArror+1
             data = "<br><h1>Your answer "+ansy+" is incorrect</h1><br>"
-            data=data+"<br><h2> your qustion is: "+self.q+"</h2></br>"
-            data= data+ "<h2> the answers that alredy have answered: "+self.stri+"</h2>"
-            data= data+ "<h2> you have "+str(3-self.numArror)+" tries left</h2>"
+            data=data+"<br><h2> Your question is: "+self.q+"</h2></br>"
+            data= data+ "<h2> The answers that have already been answered are: "+self.stri+"</h2>"
+            data= data+ "<h2> You have "+str(3-self.numArror)+" tries left</h2>"
             with open(self.WWWROOT + "gamePage.html", mode='rb') as file:
                 fileContent = file.read()
                 fileContent=fileContent.decode()
@@ -105,7 +105,7 @@ class the_english_game:
                 msg = msg + "\r\n" + fileContent+data
            
         else:
-            data = "<br><h1>You all ot of tries</h1><br>"
+            data = "<br><h1>You're all ot of tries</h1><br>"
             with open(self.WWWROOT + "losingPage.html", mode='rb') as file:
                 fileContent = file.read()
                 fileContent=fileContent.decode()
@@ -134,7 +134,7 @@ class the_english_game:
     def winning_msg(self):
         
         msg = "HTTP/1.1 200 OK\r\n"
-        data = "<br><h1>all the correct answers are: "+self.stri+"</h1><br>"
+        data = "<br><h1>All the correct answers are: "+self.stri+"</h1><br>"
         with open(self.WWWROOT + "endPageTye.html", mode='rb') as file:
             fileContent = file.read()
             fileContent=fileContent.decode()
@@ -149,7 +149,7 @@ class the_english_game:
     def main(self):
         print ("start server")
         server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM);
-        server_socket.bind(("127.0.0.1", 80))
+        server_socket.bind(("0.0.0.0", 80))
         server_socket.listen(5)
        # client_socket, client_address) = server_socket.accept()
         print ("client connect")
@@ -207,12 +207,12 @@ class the_english_game:
                                     if len(self.got_in)<2:
                                         print (len(self.got_in))
                                         self.got_in.append(client_socket)
-                                        data="<br>"+"<h2> your qustion is :"+self.q+"<h2>"
+                                        data="<br>"+"<h2> Your question is: "+self.q+"<h2>"
                                         msg = msg + "Content-Length:" + str(len(fileContent)+len(data)) + "\r\n"
                                        # data=data+"<br>"+"<h2> all the right answers that currently answered:"+stri+"<h2>"
                                         msg= msg + "\r\n" + fileContent+data
                                     else:
-                                        data="<h1> sorry we are full</h1>"
+                                        data="<h1> Sorry we are full</h1>"
                                         msg = msg + "Content-Length:" +str(len(data)) + "\r\n"
                                         msg= msg + "\r\n" +data
                                 else:
