@@ -14,7 +14,7 @@ color: -webkit-linear-gradient(top,  #e570e7 48%,#c85ec7 82%,#a849a3 100%);
 color: linear-gradient(to bottom,  #e570e7 48%,#c85ec7 82%,#a849a3 100%);
 position:absolute;
 right:570;
-top:10;
+top:100;
 font-size:18;
 font-family:arial;
 }
