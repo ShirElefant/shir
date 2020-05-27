@@ -138,7 +138,7 @@ class the_english_game:
         while (1):
             rlist, wlist, xlist = select.select([server_socket] + self.open_client_sockets, self.open_client_sockets,[])
             #עובר על כל הסוקטים המחוברים
-            for client_socket in rlist
+            for client_socket in rlist:
                 #מחבר את השחקן החדש אל השרת ומוסיף אותו לרשימת הסוקטים החדשים
                 if client_socket is server_socket:
                     (new_socket, adress) = server_socket.accept()
